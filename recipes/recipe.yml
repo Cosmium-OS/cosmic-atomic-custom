@@ -11,12 +11,18 @@ modules:
       - source: system
         destination: /
 
+  - type: copy
+    from: ghcr.io/ublue-os/akmods:main-42-x86_64
+    src: /rpms/ublue-os
+    dest: /tmp/akmods-rpm
+
   - type: script
     snippets:
       - "mkdir -p /var/roothome"
       - "dnf5 -y swap --repo='fedora' OpenCL-ICD-Loader ocl-icd"
       - "dnf5 config-manager addrepo --from-repofile='https://negativo17.org/repos/fedora-multimedia.repo'"
       - "dnf5 config-manager setopt fedora-multimedia.priority=90"
+      - "dnf5 -y install /tmp/akmods-rpm/*.rpm"
       
   - type: dnf
     repos:
