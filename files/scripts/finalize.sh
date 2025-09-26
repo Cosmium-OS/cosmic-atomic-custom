@@ -15,7 +15,7 @@ mv '/usr/share/doc/just/README.中文.md' '/usr/share/doc/just/README.zh-cn.md'
 cp /usr/share/ublue-os/update-services/etc/rpm-ostreed.conf /etc/rpm-ostreed.conf
 ln -s '/usr/share/fonts/google-noto-sans-cjk-fonts' '/usr/share/fonts/noto-cjk'
 dnf5 clean all
-rm -rf /tmp/* || true
+rm -rf /tmp/akmods-rpms /tmp/kernel-rpms /tmp/api*
 rm -rf /usr/etc
 rm -rf /boot && mkdir /boot
 find /var/* -maxdepth 0 -type d \! -name cache \! -name log -exec rm -rf {} \;
