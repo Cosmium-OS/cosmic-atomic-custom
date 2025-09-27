@@ -1,0 +1,17 @@
+modules:
+  - type: script
+    scripts:
+      - finalize.sh
+
+  - type: systemd
+    system:
+      enabled:
+        - rpm-ostreed-automatic.timer
+        - flatpak-system-update.timer
+    user:
+      enabled:
+        - flatpak-user-update.timer
+  
+  - type: initramfs
+
+  - type: signing
