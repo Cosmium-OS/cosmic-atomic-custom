@@ -27,7 +27,6 @@ modules:
       - "dnf5 config-manager setopt fedora-nvidia.enabled=1 nvidia-container-toolkit.enabled=1"
       - "dnf5 config-manager setopt fedora-multimedia.enabled=0"
       - "source /tmp/akmods-nv-rpms/kmods/nvidia-vars"
-      - "dnf5 -y install /tmp/akmods-nv-rpms/kmods/kmod-nvidia-*.rpm"
 
   - type: dnf
     repos:
@@ -45,6 +44,11 @@ modules:
         - nvidia-driver-libs.i686
         - nvidia-settings
         - nvidia-container-toolkit
+
+  - type: script
+    snippets:
+      - "cat /tmp/akmods-nv-rpms/kmods/nvidia-vars"
+      - "dnf5 -y install /tmp/akmods-nv-rpms/kmods/kmod-nvidia-*.rpm"
 
   - type: script
     scripts:
