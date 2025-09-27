@@ -9,11 +9,11 @@ modules:
       - "find /tmp/akmods-nv-rpms/"
       - "dnf5 config-manager setopt 'rpmfusion*'.enabled=0"
       - "dnf5 config-manager setopt fedora-cisco-openh264.enabled=0"
+      - "dnf5 -y install /tmp/akmods-nv-rpms/ublue-os/ublue-os-nvidia-addons-*.rpm"
   
   - type: dnf
     install:
       packages:
-        - /tmp/akmods-nv-rpms/ublue-os/ublue-os-nvidia-addons-*.rpm
         - mesa-dri-drivers.i686
         - mesa-filesystem.i686
         - mesa-libEGL.i686
@@ -27,6 +27,7 @@ modules:
       - "dnf5 config-manager setopt fedora-nvidia.enabled=1 nvidia-container-toolkit.enabled=1"
       - "dnf5 config-manager setopt fedora-multimedia.enabled=0"
       - "source /tmp/akmods-nv-rpms/kmods/nvidia-vars"
+      - "dnf5 -y install /tmp/akmods-nv-rpms/kmods/kmod-nvidia-*.rpm"
 
   - type: dnf
     repos:
@@ -44,7 +45,6 @@ modules:
         - nvidia-driver-libs.i686
         - nvidia-settings
         - nvidia-container-toolkit
-        - /tmp/akmods-nv-rpms/kmods/kmod-nvidia-*.rpm
 
   - type: script
     scripts:
