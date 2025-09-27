@@ -5,6 +5,7 @@
 Add these lines before doing builds of desired akmods:
 
 ```bash
+rm -rf /var/tmp
 mkdir -p /var/tmp
 chmod 1777 /var/tmp
 ```

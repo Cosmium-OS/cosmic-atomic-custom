@@ -20,3 +20,5 @@ rm -rf /usr/etc
 rm -rf /boot && mkdir /boot
 find /var/* -maxdepth 0 -type d \! -name cache \! -name log -exec rm -rf {} \;
 find /var/cache/* -maxdepth 0 -type d \! -name libdnf5 -exec rm -rf {} \;
+mkdir -p /var/tmp
+chmod 1777 /var/tmp
