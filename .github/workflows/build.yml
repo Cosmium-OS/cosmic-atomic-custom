@@ -22,12 +22,12 @@ jobs:
       packages: write
       id-token: write
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         recipe:
           # !! Add your recipes here
           - recipe-main.yml
-          - recipe-nvidia.yml
+          #- recipe-nvidia.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
