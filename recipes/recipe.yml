@@ -132,6 +132,10 @@ modules:
       - install-cosign.sh
       - finalize.sh
 
+  - type: containerfile
+    snippets:
+      - RUN rm -rf /var/tmp && mkdir -p /var/tmp && chmod -R 1777 /var/tmp
+
   - type: systemd
     system:
       enabled:
