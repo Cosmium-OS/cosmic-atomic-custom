@@ -8,6 +8,10 @@ image-version: 42
 modules:
   - from-file: common/common.yml
 
-  - from-file: common/nvidia.yml
+  - type: akmods
+    base: main
+    install:
+      - nvidia-open
+    nvidia-driver: nvidia-open
 
   - from-file: common/finalize.yml
