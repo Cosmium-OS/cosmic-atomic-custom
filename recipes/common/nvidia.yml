@@ -47,7 +47,7 @@ modules:
 
   - type: script
     snippets:
-      - "dnf5 -y install /tmp/akmods-nv-rpms/kmods/kmod-nvidia-$(rpm -q 'kernel' --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')-$(rpm -q --queryformat '%{VERSION}' nvidia-driver)-x86_64.rpm"
+      - "dnf5 -y install /tmp/akmods-nv-rpms/kmods/kmod-nvidia-$(rpm -q 'kernel' --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')-$(rpm -q --queryformat '%{VERSION}' nvidia-driver)-1.fc42.x86_64.rpm"
 
   - type: script
     scripts:
